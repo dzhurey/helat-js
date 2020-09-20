@@ -10,7 +10,7 @@ This repository is a web app to manage event booking like meetup.com, eventbrite
 
 1. Nodejs version > 12
 
-2. MySQL version
+2. MySQL
 
 ## Installation
 
