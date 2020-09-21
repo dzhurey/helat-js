@@ -4,16 +4,20 @@ import express from 'express'
 import path from 'path'
 import cookieParser from 'cookie-parser'
 import logger from 'morgan'
+import 'regenerator-runtime/runtime'
 import dotenv from 'dotenv'
 
 dotenv.config()
 
+import { handler as errorHandler } from './src/middlewares/errorHandler'
 import indexRouter from './src/routes/index'
 import usersRouter from './src/routes/users'
 
 import db from './src/models'
 
 const app = express()
+
+db.sequelize.sync()
 
 // view engine setup
 app.set('views', path.join(__dirname, 'src', 'views'))
@@ -25,8 +29,6 @@ app.use(express.urlencoded({ extended: false }))
 app.use(cookieParser())
 app.use(express.static(path.join(__dirname, 'public')))
 
-db.sequelize.sync()
-
 app.use('/', indexRouter)
 app.use('/users', usersRouter)
 
@@ -36,14 +38,6 @@ app.use(function (req, res, next) {
 })
 
 // error handler
-app.use(function (err, req, res, next) {
-  // set locals, only providing error in development
-  res.locals.message = err.message
-  res.locals.error = process.env.NODE_ENV === 'development' ? err : {}
-
-  // render the error page
-  res.status(err.status || 500)
-  res.render('error')
-})
+app.use(errorHandler)
 
 export default app
