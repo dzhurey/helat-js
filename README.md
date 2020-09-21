@@ -4,7 +4,22 @@ This repository is a web app to manage event booking like meetup.com, eventbrite
 
 ## Project Structure
 
-// Project structure here
+```
++-- root
+|  +-- client
+|  |  +-- client directory here
+|  +-- server
+|  |  +-- bin
+|  |  +-- config
+|  |  +-- public
+|  |  +-- src
+|  |  |  +-- db
+|  |  |  |  +-- migrations
+|  |  |  |  +-- seeders
+|  |  |  +-- models
+|  |  |  +-- routes // controllers
+|  |  |  +-- utils // utility function for global purpose
+```
 
 ## Requirement
 
