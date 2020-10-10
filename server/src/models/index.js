@@ -1,7 +1,7 @@
-import Sequelize from 'sequelize'
-import fs from 'fs'
-import path from 'path'
-import config from '../../config/database'
+const Sequelize = require('sequelize')
+const fs = require('fs')
+const path = require('path')
+const config = require('../../config/database')
 
 const dbConfig = config[process.env.NODE_ENV]
 const basename = path.basename(__filename)

@@ -1,5 +1,5 @@
-import express from 'express'
-import models from '../models'
+const express = require('express')
+const models = require('../models')
 
 const router = express.Router()
 
@@ -9,4 +9,4 @@ router.get('/', async function (req, res, next) {
   res.send(users)
 })
 
-export default router
+module.exports = router

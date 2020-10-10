@@ -1,19 +1,20 @@
 /* eslint-disable import/first */
-import createError from 'http-errors'
-import express from 'express'
-import path from 'path'
-import cookieParser from 'cookie-parser'
-import logger from 'morgan'
-import 'regenerator-runtime/runtime'
-import dotenv from 'dotenv'
+const express = require('express')
+const path = require('path')
+const cookieParser = require('cookie-parser')
+const logger = require('morgan')
+require('regenerator-runtime/runtime')
+const dotenv = require('dotenv')
+const { NotFoundError } = require('./src/utils/exception')
 
 dotenv.config()
 
-import { handler as errorHandler } from './src/middlewares/errorHandler'
-import indexRouter from './src/routes/index'
-import usersRouter from './src/routes/users'
+const { handler: errorHandler } = require('./src/middlewares/errorHandler')
+const indexRouter = require('./src/routes/index')
+const usersRouter = require('./src/routes/users')
+const authRouter = require('./src/routes/auth')
 
-import db from './src/models'
+const db = require('./src/models')
 
 const app = express()
 
@@ -31,13 +32,14 @@ app.use(express.static(path.join(__dirname, 'public')))
 
 app.use('/', indexRouter)
 app.use('/users', usersRouter)
+app.use('/api/v1/auth', authRouter)
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
-  next(createError(404))
+  next(new NotFoundError('API path not found!'))
 })
 
 // error handler
 app.use(errorHandler)
 
-export default app
+module.exports = app
