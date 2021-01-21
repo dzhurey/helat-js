@@ -1,0 +1,13 @@
+.user-avatar-container{
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background-color: $orange2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  & span {
+    color: $white;
+    font-size: 40px;
+  }
+}

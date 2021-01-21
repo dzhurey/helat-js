@@ -1,0 +1,13 @@
+.btn-outline-white {
+  border-color: $white;
+  color: $white;
+  &:hover {
+    background-color: $white;
+    color: $primary;
+  }
+}
+
+.btn-rounded {
+  border-radius: 19px;
+  height: 38px;
+}

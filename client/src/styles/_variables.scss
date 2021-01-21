@@ -1,0 +1,26 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+
+// Colors
+$orange1: rgba(244, 125, 30, 1);
+$orange2: rgba(242, 102, 28, 1);
+$orange3: rgba(237, 79, 35, 1);
+$orange4: rgba(204, 67, 18, 1);
+$yellow1: rgba(251, 177, 54, 1);
+$red1: #B00020;
+$white: #ffffff;
+$black: #212121;
+$gray1: #616161;
+$gray2: rgba(0, 0, 0, 0.12);
+$gray3: #f7f7f9;
+$shadow: rgba(49,53,59,0.12);
+
+$primary: $orange2;
+$secondary: $orange4;
+$danger: $red1;
+$warning: $yellow1;
+
+// Fonts
+$roboto: 'Roboto', sans-serif;
+
+// Sizing
+$navbar-height: 56px;

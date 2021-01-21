@@ -1,0 +1,40 @@
+@import './colors';
+// Components
+@import './components/buttons';
+@import './components/nav';
+@import './components/setting';
+@import './components/forms';
+@import './components/post';
+@import './components/well';
+@import './components/loading';
+@import './components/login';
+// Layouts
+@import './layouts/_default';
+
+// #app {
+//   font-family: $roboto;
+//   -webkit-font-smoothing: antialiased;
+//   -moz-osx-font-smoothing: grayscale;
+//   color: $black;
+// }
+
+#app {
+  font-family: Avenir, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  color: #2c3e50;
+}
+
+#nav {
+  padding: 30px;
+
+  a {
+    font-weight: bold;
+    color: #2c3e50;
+
+    &.router-link-exact-active {
+      color: #42b983;
+    }
+  }
+}

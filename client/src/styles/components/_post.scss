@@ -1,0 +1,53 @@
+.post {
+  &-card {
+    padding: 1rem;
+    border-radius: 1rem;
+    background-color: $gray3;
+    box-shadow: 0 1px 6px 0 $shadow;
+    cursor: pointer;
+    margin-bottom: 1rem;
+    & .text {
+      &-title {
+        font-size: 1.5rem;
+      }
+      &-date {
+        font-size: 1.1rem;
+        color: $gray1;
+      }
+      &-overview {
+        width: 100%;
+        overflow: hidden;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+      }
+      &-created {
+        color: $gray1;
+        font-size: 0.8rem;
+      }
+    }
+  }
+
+  &-dynamic-form {
+    list-style-type: none;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    padding-left: 0;
+    margin-bottom: 0;
+    & li {
+      margin-bottom: 0.5rem;
+      padding-left: 30px;
+      position: relative;
+      &:before {
+        width: 10px;
+        height: 10px;
+        background-color: $gray1;
+        content: ' ';
+        position: absolute;
+        left: 10px;
+        top: 13px;
+        border-radius: 5px;
+      }
+    }
+  }
+}
